@@ -2,10 +2,104 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Products.css'
 
+const PhoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+    <path d="M14.5 2a7.5 7.5 0 017.5 7.5" opacity="0.5"/>
+    <path d="M14.5 6a3.5 3.5 0 013.5 3.5" opacity="0.7"/>
+  </svg>
+)
+
+const MessageSquareIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    <circle cx="9" cy="10" r="1" fill="currentColor"/>
+    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+    <path d="M9 14c.5 1 1.5 1.5 3 1.5s2.5-.5 3-1.5" opacity="0.7"/>
+  </svg>
+)
+
+const WorkflowIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+    <circle cx="12" cy="12" r="8" opacity="0.3" strokeDasharray="4 2"/>
+  </svg>
+)
+
+const ChartIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 3v18h18"/>
+    <path d="M18 17l-3-5-4 4-4-6-4 5" opacity="0.7"/>
+    <circle cx="7" cy="15" r="2" fill="currentColor"/>
+    <circle cx="11" cy="13" r="2" fill="currentColor"/>
+    <circle cx="15" cy="8" r="2" fill="currentColor"/>
+  </svg>
+)
+
+const CalendarIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+    <line x1="16" y1="2" x2="16" y2="6"/>
+    <line x1="8" y1="2" x2="8" y2="6"/>
+    <line x1="3" y1="10" x2="21" y2="10"/>
+  </svg>
+)
+
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6" opacity="0.7"/>
+  </svg>
+)
+
+const SmartphoneIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12" y2="18" strokeWidth="2.5"/>
+  </svg>
+)
+
+const SlackIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="9" width="4" height="4" rx="1"/>
+    <rect x="17" y="9" width="4" height="4" rx="1"/>
+    <rect x="10" y="2" width="4" height="4" rx="1"/>
+    <rect x="10" y="16" width="4" height="4" rx="1"/>
+  </svg>
+)
+
+const ZapIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/>
+  </svg>
+)
+
+const CloudIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/>
+  </svg>
+)
+
+const TargetIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <circle cx="12" cy="12" r="6"/>
+    <circle cx="12" cy="12" r="2"/>
+  </svg>
+)
+
+const CreditCardIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
+    <line x1="1" y1="10" x2="23" y2="10"/>
+  </svg>
+)
+
 const products = [
   {
     id: 'voice-scheduling',
-    icon: '📞',
+    icon: <PhoneIcon />,
     name: 'AI Voice Scheduling',
     tagline: 'Never miss a booking again',
     description: 'Our flagship AI voice assistant answers calls 24/7, schedules appointments, sends confirmations, and syncs with your calendar. Multilingual support with natural conversation flow.',
@@ -23,7 +117,7 @@ const products = [
   },
   {
     id: 'customer-ai',
-    icon: '💬',
+    icon: <MessageSquareIcon />,
     name: 'Customer AI Agent',
     tagline: 'AI-powered customer support',
     description: 'Deploy intelligent AI agents that handle customer inquiries, support tickets, and FAQs. Seamlessly escalate to human agents when needed.',
@@ -41,7 +135,7 @@ const products = [
   },
   {
     id: 'workflow-automation',
-    icon: '⚙️',
+    icon: <WorkflowIcon />,
     name: 'Workflow Automation',
     tagline: 'Automate repetitive tasks',
     description: 'Build custom automation workflows that connect your tools and eliminate manual tasks. From lead follow-ups to invoice processing.',
@@ -59,7 +153,7 @@ const products = [
   },
   {
     id: 'analytics-insights',
-    icon: '📊',
+    icon: <ChartIcon />,
     name: 'AI Analytics & Insights',
     tagline: 'Data-driven decisions',
     description: 'Get actionable insights from your business data with AI-powered analytics. Understand trends, predict outcomes, and optimize performance.',
@@ -78,14 +172,14 @@ const products = [
 ]
 
 const integrations = [
-  { name: 'Google Calendar', icon: '📅' },
-  { name: 'Microsoft Outlook', icon: '📧' },
-  { name: 'Twilio', icon: '📱' },
-  { name: 'Slack', icon: '💬' },
-  { name: 'Zapier', icon: '⚡' },
-  { name: 'Salesforce', icon: '☁️' },
-  { name: 'HubSpot', icon: '🎯' },
-  { name: 'Stripe', icon: '💳' }
+  { name: 'Google Calendar', icon: <CalendarIcon /> },
+  { name: 'Microsoft Outlook', icon: <MailIcon /> },
+  { name: 'Twilio', icon: <SmartphoneIcon /> },
+  { name: 'Slack', icon: <SlackIcon /> },
+  { name: 'Zapier', icon: <ZapIcon /> },
+  { name: 'Salesforce', icon: <CloudIcon /> },
+  { name: 'HubSpot', icon: <TargetIcon /> },
+  { name: 'Stripe', icon: <CreditCardIcon /> }
 ]
 
 export default function Products() {

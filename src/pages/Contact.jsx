@@ -1,23 +1,65 @@
 import React, { useState } from 'react'
 import './Contact.css'
 
+const MailIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+    <polyline points="22,6 12,13 2,6" opacity="0.7"/>
+  </svg>
+)
+
+const MessageCircleIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+    <path d="M8 10h8M8 14h4" opacity="0.6"/>
+  </svg>
+)
+
+const MapPinIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+)
+
+const ClockIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 6v6l4 2"/>
+  </svg>
+)
+
+const GlobeIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" opacity="0.6"/>
+  </svg>
+)
+
+const ShieldIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+    <path d="M9 12l2 2 4-4" opacity="0.6"/>
+  </svg>
+)
+
 const contactMethods = [
   {
-    icon: '📧',
+    icon: <MailIcon />,
     title: 'Email',
     description: 'Our support team typically responds within 24 hours.',
     value: 'contact@innovative360ai.com',
     link: 'mailto:contact@innovative360ai.com'
   },
   {
-    icon: '💬',
+    icon: <MessageCircleIcon />,
     title: 'Live Chat',
     description: 'Chat with our team during business hours.',
     value: 'Available 9am - 6pm PST',
     link: null
   },
   {
-    icon: '📍',
+    icon: <MapPinIcon />,
     title: 'Office',
     description: 'Visit us at our headquarters.',
     value: 'Los Angeles, California',
@@ -96,15 +138,15 @@ export default function Contact() {
               </p>
               <div className="response-info">
                 <div className="response-item">
-                  <span className="response-icon">⏱️</span>
+                  <span className="response-icon"><ClockIcon /></span>
                   <span>Average response time: 4 hours</span>
                 </div>
                 <div className="response-item">
-                  <span className="response-icon">🌍</span>
+                  <span className="response-icon"><GlobeIcon /></span>
                   <span>Support available worldwide</span>
                 </div>
                 <div className="response-item">
-                  <span className="response-icon">🔒</span>
+                  <span className="response-icon"><ShieldIcon /></span>
                   <span>Your information is secure</span>
                 </div>
               </div>

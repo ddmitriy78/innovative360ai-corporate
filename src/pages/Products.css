@@ -4,7 +4,11 @@
 
 /* Hero Section */
 .products-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%),
+                    url('/images/hero-bg.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   padding: 80px 20px;
   text-align: center;
 }
@@ -68,7 +72,14 @@
 }
 
 .product-icon-large {
-  font-size: 48px;
+  width: 48px;
+  height: 48px;
+  color: #667eea;
+}
+
+.product-icon-large svg {
+  width: 100%;
+  height: 100%;
 }
 
 .coming-soon-badge {
@@ -173,8 +184,15 @@
 }
 
 .mockup-icon {
-  font-size: 64px;
-  margin-bottom: 16px;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  color: #667eea;
+}
+
+.mockup-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .mockup-title {
@@ -240,9 +258,16 @@
 }
 
 .integration-icon {
-  font-size: 32px;
+  width: 32px;
+  height: 32px;
   display: block;
-  margin-bottom: 8px;
+  margin: 0 auto 8px;
+  color: #667eea;
+}
+
+.integration-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .integration-name {
@@ -344,9 +369,17 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%),
+                    url('/images/cta-bg.png');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   padding: 80px 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-title {
