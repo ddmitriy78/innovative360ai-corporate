@@ -1,0 +1,284 @@
+.about-container {
+  padding-top: 70px;
+}
+
+/* Hero Section */
+.about-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.about-hero .hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+.about-hero .hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.about-hero .hero-subtitle {
+  font-size: 20px;
+  opacity: 0.95;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Story Section */
+.story-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.story-content .section-title {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.story-content p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.story-content p:last-child {
+  margin-bottom: 0;
+}
+
+.story-image {
+  display: flex;
+  justify-content: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8f0ff 100%);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.placeholder-icon {
+  font-size: 64px;
+}
+
+.placeholder-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: #667eea;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a2e;
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin: 0 0 48px;
+}
+
+/* Values Section */
+.values-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.value-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+}
+
+.value-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.value-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 12px;
+}
+
+.value-description {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Team Section */
+.team-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 32px;
+}
+
+.team-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.team-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 12px;
+}
+
+.team-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 16px;
+}
+
+.cta-subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 36px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: 16px;
+  min-width: 180px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .about-hero .hero-title {
+    font-size: 36px;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .story-content .section-title {
+    text-align: center;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-size: 28px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 60px 16px;
+  }
+
+  .about-hero .hero-title {
+    font-size: 28px;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .story-section,
+  .values-section,
+  .team-section,
+  .cta-section {
+    padding: 60px 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+}
