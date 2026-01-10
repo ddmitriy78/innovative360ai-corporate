@@ -65,16 +65,19 @@ corporate-site/
 | `/contact` | Contact | Contact form, FAQ |
 | `/privacy` | Privacy Policy | Legal privacy policy |
 | `/terms` | Terms of Service | Legal terms |
+| `/sms-terms` | SMS Terms | SMS/A2P 10DLC compliance terms |
 | `/careers` | Careers | Coming soon |
 | `/press` | Press | Coming soon |
+| `/cookies` | Cookie Policy | Coming soon |
 
 ## Deployment
 
-### Manual Deployment
+**Automated CI/CD:** All deployments happen automatically via GitHub Actions when pushing to `main` branch.
 
-```bash
-./deploy-corporate.sh [aws-profile] [region]
-```
+- ✅ Build process runs on every push
+- ✅ Automated deployment to S3
+- ✅ CloudFront cache invalidation
+- ✅ Production URL: https://www.innovative360ai.com
 
 ### AWS Infrastructure Required
 
