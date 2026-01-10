@@ -35,3 +35,4 @@ NEXT STEPS:
 4. Submit for carrier review
 5. Wait 5-10 business days for approval
 6. Assign approved campaign to your Twilio phone number
+Test Claude auto-review with OAuth token
