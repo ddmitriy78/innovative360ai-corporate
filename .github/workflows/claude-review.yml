@@ -31,6 +31,7 @@ jobs:
       - name: Claude Code Review
         uses: anthropics/claude-code-action@v1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           prompt: |
             Review this pull request focusing on:
             1. Code quality and React best practices
@@ -58,4 +59,5 @@ jobs:
       - name: Claude Interactive Response
         uses: anthropics/claude-code-action@v1
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           claude_args: "--max-turns 3"
