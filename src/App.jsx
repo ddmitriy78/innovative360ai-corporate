@@ -10,6 +10,7 @@ import Products from './pages/Products'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
 import Terms from './pages/Terms'
+import SmsTerms from './pages/SmsTerms'
 
 // Placeholder components for pages not yet implemented
 function ComingSoon({ title }) {
@@ -58,6 +59,7 @@ export default function App() {
             {/* Legal Pages */}
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/sms-terms" element={<SmsTerms />} />
             <Route path="/cookies" element={<Cookies />} />
 
             {/* Company Pages */}
