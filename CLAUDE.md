@@ -12,12 +12,24 @@ npm run preview  # Preview production build
 
 ## Deployment
 
-**Automated (GitHub Actions):** Push to `main` triggers build and deployment to AWS S3 + CloudFront invalidation.
+**IMPORTANT: CI/CD Only Deployment Policy**
+- **NEVER deploy manually** - All deployments must go through GitHub Actions CI/CD pipeline
+- Push to `main` branch automatically triggers build and deployment to AWS S3 + CloudFront invalidation
+- Manual deployments via `deploy-corporate.sh` or `aws s3 sync` commands are **PROHIBITED**
+- This ensures consistent deployments, proper testing, and audit trail
 
-**Manual:**
-```bash
-./deploy-corporate.sh [aws-profile] [region]  # Defaults: profile=default, region=us-west-1
-```
+**Required GitHub Secrets:**
+- `AWS_ACCESS_KEY_ID` - IAM user access key with S3 and CloudFront permissions
+- `AWS_SECRET_ACCESS_KEY` - IAM user secret key
+
+**Required GitHub Variables:**
+- `CLOUDFRONT_DISTRIBUTION_ID` - CloudFront distribution ID for cache invalidation
+
+**Setup Instructions:**
+1. Go to repository Settings → Secrets and variables → Actions
+2. Add secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `ANTHROPIC_API_KEY`
+3. Add variable: `CLOUDFRONT_DISTRIBUTION_ID` (E18X59M2CMD9OJ)
+4. Ensure IAM user has permissions for S3 (PutObject, DeleteObject) and CloudFront (CreateInvalidation)
 
 **AWS Infrastructure:**
 | Resource | ID/Name |
@@ -49,3 +61,58 @@ React 18 SPA with React Router v7, built with Vite 5. Pure CSS styling (no frame
 ## External Links
 
 The site links to a separate app at `ai-schedule.innovative360ai.com` for login/register functionality.
+
+## Code Review Guidelines
+
+**Automated PR Reviews:** Claude Code automatically reviews all pull requests via GitHub Actions (`.github/workflows/claude-review.yml`).
+
+**Interactive Reviews:** Mention `@claude` in PR comments for specific questions or code review requests.
+
+**Review Focus Areas:**
+
+1. **Code Quality & React Best Practices**
+   - Follow existing patterns: React 18 hooks, functional components
+   - Component structure: shared in `src/components/`, pages in `src/pages/`
+   - Co-locate CSS files with components (e.g., `Contact.jsx` + `Contact.css`)
+   - Proper hook usage: dependencies in `useEffect`, `useState` patterns
+   - React Router v7 route definitions in `src/App.jsx`
+
+2. **Security**
+   - **CRITICAL:** No hardcoded credentials, API keys, or AWS secrets in code
+   - Validate all user input in forms
+   - Check for XSS vulnerabilities in dynamic content
+   - No `dangerouslySetInnerHTML` without sanitization
+   - Environment variables must use proper validation
+
+3. **CSS & Design Consistency**
+   - Use brand colors: gradient `#667eea` → `#764ba2`, text `#1a1a2e`, bg `#f8fafc`
+   - Follow existing spacing and typography patterns
+   - Responsive design: test mobile breakpoints (max-width: 768px)
+   - Pure CSS only - no CSS frameworks (Tailwind, Bootstrap, etc.)
+   - Hero sections use gradient overlay + background image pattern
+
+4. **Build & Deployment Safety**
+   - Changes must not break `npm run build`
+   - Test production build output in `/dist`
+   - No console errors or warnings in production
+   - Verify asset paths are correct (images in `/public/images/`)
+   - Respect CI/CD-only deployment policy (no manual deployment commands)
+
+5. **A2P 10DLC Compliance** (for SMS-related changes)
+   - SMS Terms page must remain compliant at `/sms-terms`
+   - All SMS-related content must follow TCPA regulations
+   - Verify opt-in/opt-out language is accurate
+   - Check contact information consistency (+1-415-532-2679, contact@innovative360ai.com)
+
+6. **Performance**
+   - Check for unnecessary re-renders
+   - Verify images are optimized
+   - Avoid large bundle size increases
+   - Use lazy loading for heavy components if needed
+
+**Review Response Format:**
+- Provide concise, actionable feedback
+- Reference specific files and line numbers
+- Suggest concrete fixes with code examples
+- Flag security issues with HIGH priority
+- Approve PRs that meet all standards
