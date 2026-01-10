@@ -1,0 +1,64 @@
+# Claude Code GitHub App Configuration
+# This configures automatic PR reviews without requiring @mentions
+
+# Automatically review all pull requests
+auto_review:
+  enabled: true
+  # Review when PR is opened or updated
+  on:
+    - opened
+    - synchronize
+    - reopened
+
+# Review configuration
+review:
+  # Instructions for Claude when reviewing PRs
+  prompt: |
+    Review this pull request focusing on:
+
+    1. **Code Quality & React Best Practices**
+       - React 18 hooks and functional components
+       - Proper component structure and patterns
+       - Hook dependencies and state management
+
+    2. **Security**
+       - No hardcoded credentials or API keys
+       - Input validation and XSS prevention
+       - Secure coding practices
+
+    3. **CSS & Design Consistency**
+       - Brand colors: gradient #667eea → #764ba2
+       - Responsive design (mobile breakpoints)
+       - Pure CSS (no frameworks)
+
+    4. **Build & Deployment**
+       - Changes don't break npm run build
+       - No console errors in production
+       - Proper asset paths
+
+    5. **A2P 10DLC Compliance** (if SMS-related)
+       - TCPA compliance
+       - Opt-in/opt-out language accuracy
+
+    Provide concise, actionable feedback with file references and code suggestions.
+
+  # Model configuration
+  model: claude-sonnet-4-5
+  max_turns: 5
+
+# Optional: Auto-fix minor issues
+auto_fix:
+  enabled: false  # Set to true if you want Claude to automatically fix minor issues
+
+# File patterns to include/exclude from review
+files:
+  include:
+    - "src/**/*.jsx"
+    - "src/**/*.js"
+    - "src/**/*.css"
+    - ".github/**/*.yml"
+    - "package.json"
+  exclude:
+    - "dist/**"
+    - "node_modules/**"
+    - "*.md"  # Don't review markdown files automatically
