@@ -27,9 +27,11 @@ npm run preview  # Preview production build
 
 **Setup Instructions:**
 1. Go to repository Settings → Secrets and variables → Actions
-2. Add secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`
+2. Add secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `CLAUDE_CODE_OAUTH_TOKEN`
 3. Add variable: `CLOUDFRONT_DISTRIBUTION_ID` (E18X59M2CMD9OJ)
 4. Ensure IAM user has permissions for S3 (PutObject, DeleteObject) and CloudFront (CreateInvalidation)
+
+**Note:** See `GET-CLAUDE-OAUTH-TOKEN.md` for instructions on obtaining the Claude OAuth token.
 
 **AWS Infrastructure:**
 | Resource | ID/Name |
@@ -64,9 +66,9 @@ The site links to a separate app at `ai-schedule.innovative360ai.com` for login/
 
 ## Code Review Guidelines
 
-**Automated PR Reviews:** Claude Code GitHub app automatically reviews all pull requests when they are opened or updated. Configuration in `.github/claude.yml`.
+**Automated PR Reviews:** Claude Code automatically reviews all pull requests when opened or updated via GitHub Actions workflow (`.github/workflows/claude-code-review.yml`).
 
-**No @mention required** - Reviews happen automatically on PR creation and updates.
+**No @mention required** - Reviews happen automatically on PR creation and updates using Claude Code OAuth token.
 
 **Review Focus Areas:**
 
